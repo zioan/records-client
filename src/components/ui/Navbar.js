@@ -24,6 +24,13 @@ function Navbar() {
         <NavLink className='btn nav-link' onClick={clickHandler} to='/'>
           Home
         </NavLink>
+        <NavLink
+          className='btn nav-link'
+          onClick={clickHandler}
+          to='/authentication'
+        >
+          Login
+        </NavLink>
         <NavLink className='btn nav-link' onClick={clickHandler} to='/about'>
           About
         </NavLink>

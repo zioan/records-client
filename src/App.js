@@ -7,13 +7,17 @@ import {
 import Layout from './components/ui/Layout';
 import Navbar from './components/ui/Navbar';
 
+import Authentication from './pages/Authentication';
+
 function App() {
   return (
     <BrowserRouter>
       <Layout>
         <Navbar />
-        <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-        <button className='btn'>Button</button>
+        <Routes>
+          {/* <Route exact path='/' element={<Home />} /> */}
+          <Route path='/authentication' element={<Authentication />} />
+        </Routes>
       </Layout>
     </BrowserRouter>
   );
