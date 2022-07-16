@@ -1,5 +1,5 @@
 function Layout({ children }) {
-  return <main className=' min-h-screen text-center'>{children}</main>;
+  return <main className=' min-h-screen'>{children}</main>;
 }
 
 export default Layout;

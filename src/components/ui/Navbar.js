@@ -18,7 +18,7 @@ function Navbar() {
   };
 
   return (
-    <nav className=' h-auto md:h-24 p-2 bg-accent-focus  mx-auto flex justify-between md:items-center mb-8'>
+    <nav className=' h-auto md:h-24 p-2 bg-accent-focus  mx-auto flex justify-between md:items-center'>
       <Link to='/'>
         <VscGraphLeft className=' text-6xl text-zinc-800' />
       </Link>

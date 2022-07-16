@@ -18,9 +18,7 @@ export const UserProvider = ({ children }) => {
       const userRes = await axios.post(`${server}/users/login`, loginDetails);
       getUser();
       setError('');
-      console.log('log in works');
     } catch (error) {
-      console.log(error);
       setError(error.response.data);
     }
   };
