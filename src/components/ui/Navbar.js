@@ -1,11 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
 import { VscGraphLeft } from 'react-icons/vsc';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 
+import AuthContext from '../../context/AuthContext';
+import UserContext from '../../context/UserContext';
+
 function Navbar() {
   const [togglerNav, setTogglerNav] = useState(false);
+
+  const { user } = useContext(AuthContext);
+  const { logoutUser } = useContext(UserContext);
 
   const clickHandler = () => {
     setTogglerNav(!togglerNav);
@@ -31,6 +37,11 @@ function Navbar() {
         >
           Login
         </NavLink>
+        {user && (
+          <NavLink className='btn nav-link' onClick={logoutUser} to='/'>
+            Log out
+          </NavLink>
+        )}
         <NavLink className='btn nav-link' onClick={clickHandler} to='/about'>
           About
         </NavLink>

@@ -4,10 +4,13 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import axios from 'axios';
 import Layout from './components/ui/Layout';
 import Navbar from './components/ui/Navbar';
 
 import Authentication from './pages/Authentication';
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

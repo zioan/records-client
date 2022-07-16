@@ -9,16 +9,18 @@ export const UserProvider = ({ children }) => {
   const [error, setError] = useState('');
   const { user, getUser } = useContext(AuthContext);
 
-  const login = async (email, password) => {
+  const login = async (name, password) => {
     const loginDetails = {
-      email,
+      name,
       password,
     };
     try {
       const userRes = await axios.post(`${server}/users/login`, loginDetails);
       getUser();
       setError('');
+      console.log('log in works');
     } catch (error) {
+      console.log(error);
       setError(error.response.data);
     }
   };
