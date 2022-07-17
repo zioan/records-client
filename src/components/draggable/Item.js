@@ -14,11 +14,11 @@ function Item({ id, item }) {
       ref={drag}
       className={
         isDragging
-          ? ' border-2 bg-red-800 text-white text-center m-4'
-          : 'border-2 bg-slate-500 text-white text-center m-4'
+          ? ' border-2 bg-red-800 text-white text-center m-2 p-2 w-[120px] min-w-[100px]'
+          : 'border-2 bg-slate-500 text-white text-center m-2 p-2 w-[120px] min-w-[100px]'
       }
     >
-      <p>{item}</p>
+      <p className=' break-normal'>{item}</p>
     </div>
   );
 }
