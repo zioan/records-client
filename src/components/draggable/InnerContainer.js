@@ -2,8 +2,15 @@ import { useState } from 'react';
 import { useDrop } from 'react-dnd';
 import Item from './Item';
 
+import uuid from 'react-uuid';
+
 function InnerContainer() {
-  const test = [1, 2, 3, 4];
+  const test = [
+    { id: 1, name: 1 },
+    { id: 2, name: 2 },
+    { id: 3, name: 3 },
+    { id: 4, name: 4 },
+  ];
 
   const [board, setBoard] = useState([]);
 
@@ -16,8 +23,9 @@ function InnerContainer() {
   }));
 
   const addItemToBoard = (id) => {
-    const selectedItem = test.filter((item) => item.index === id);
-    setBoard((prevState) => [...prevState, selectedItem]);
+    const selectedItem = test.filter((item) => item.id === id);
+    console.log(selectedItem);
+    setBoard((prevState) => [...prevState, selectedItem[0]]);
     console.log(board);
   };
 
@@ -25,8 +33,8 @@ function InnerContainer() {
     <section className=' flex'>
       {/* All draggable items  */}
       <div className=' bg-slate-200 border-2 w-[300px] min-h-[500px] mr-4'>
-        {test.map((item, index) => (
-          <Item key={index} id={index} item={item} />
+        {test.map((item) => (
+          <Item key={uuid()} id={item.id} item={item.name} />
         ))}
       </div>
 
@@ -35,8 +43,8 @@ function InnerContainer() {
         ref={drop}
         className=' bg-slate-200 border-2 w-[300px] min-h-[500px]'
       >
-        {board.map((item, index) => (
-          <Item key={index} id={index} item={item} />
+        {board.map((item) => (
+          <Item key={uuid()} id={item.id} item={item.name} />
         ))}
       </div>
     </section>
