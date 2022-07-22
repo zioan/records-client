@@ -10,7 +10,8 @@ import Navbar from './components/ui/Navbar';
 
 import Authentication from './pages/Authentication';
 import Content from './components/ui/Content';
-import DraggableContainer from './components/draggable/DraggableContainer';
+
+import WorkingLayout from './components/workingLayout/WorkingLayout';
 
 axios.defaults.withCredentials = true;
 
@@ -25,7 +26,7 @@ function App() {
         </Routes>
         <Content>
           <h1>Hy</h1>
-          <DraggableContainer />
+          <WorkingLayout />
         </Content>
       </Layout>
     </BrowserRouter>
