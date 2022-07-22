@@ -1,4 +1,6 @@
-function RightMenu({ x, y, showMenu }) {
+function RightMenu({ x, y, showMenu, menuOptions }) {
+  const { changeType } = menuOptions;
+
   const style = () => {
     return {
       height: 200,
@@ -17,7 +19,9 @@ function RightMenu({ x, y, showMenu }) {
 
   return (
     <div style={style()}>
-      <div style={styles.div}>Button 1</div>
+      <div style={styles.div} onClick={changeType}>
+        Button 1
+      </div>
       <div style={{ ...styles.div, ...styles.margin }}>Button 2</div>
       <div style={styles.div}>Button 3</div>
     </div>

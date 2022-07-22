@@ -25,7 +25,6 @@ function App() {
           <Route path='/authentication' element={<Authentication />} />
         </Routes>
         <Content>
-          <h1>Hy</h1>
           <WorkingLayout />
         </Content>
       </Layout>

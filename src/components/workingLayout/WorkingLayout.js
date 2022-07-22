@@ -1,13 +1,9 @@
-import { useRef } from 'react';
-import useRightClickMenu from '../../hooks/useRightClickMenu';
-import RightMenu from '../ui/RightMenu';
+import RowSection from './RowSection';
 
 function WorkingLayout() {
-  const { x, y, showMenu } = useRightClickMenu();
-
   return (
-    <section id='allowMenu' className=' w-40 h-40 bg-slate-400'>
-      <RightMenu x={x} y={y} showMenu={showMenu} />
+    <section className=' w-full h-40 border-2 p-4'>
+      <RowSection />
     </section>
   );
 }
